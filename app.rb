@@ -1,7 +1,6 @@
 class App
-  def initialize
+  def initialize; end
 
-  end
   def run
     p 'I\'m running'
   end
