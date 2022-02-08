@@ -1,8 +1,8 @@
 require 'date'
 
 class Item
-  def initialize( genre, author, label, publish_date)
-    @id = Random.rand(1...10000000)
+  def initialize(genre, author, label, publish_date)
+    @id = Random.rand(1...10_000_000)
     @archived = false
     @genre = genre
     @author = author
@@ -19,6 +19,4 @@ class Item
   def move_to_archive
     @archived = true if can_be_archived?
   end
-
 end
-
