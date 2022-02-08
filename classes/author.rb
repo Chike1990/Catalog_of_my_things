@@ -1,4 +1,5 @@
 require relative './item.rb'
+
 class Author
   attr_accessor :first_name, :last_name, :items
 
