@@ -1,16 +1,14 @@
-require relative 'item'
-
 class Genre
-    attr_accessor :name, :items
-    def initialize(name)
-        @id = Random.rand(10...250)
-        @name = name
-        @items = []
+    attr_accessor :items
+  
+    def initialize(name, _genre)
+      @id = Random.rand(110..1000)
+      @name = name
+      @items = []
     end
-
+  
     def add_item(item)
-        items << item
-        item.genre = self
-
+      @items << item
+      item.add_genre(self)
     end
-end
+  end
