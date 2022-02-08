@@ -1,11 +1,11 @@
 require_relative '../classes/book'
 require 'date'
 
-describe 'test Label class' do
+describe 'test Book class' do
   before(:each) do
-    @book = Book.new('Horror', 'Edgar Allan Poe', Date.new(2020, 1, 1), 'Gandhi', 'bad')
-    @book2 = Book.new('Horror', 'Edgar Allan Poe', Date.new(2000, 1, 1), 'Gandhi', 'good')
-    @book3 = Book.new('Horror', 'Edgar Allan Poe', Date.new(2020, 1, 1), 'Gandhi', 'good')
+    @book = Book.new('Horror', 'Edgar Allan Poe', DateTime.new(2020, 1, 1), 'Gandhi', 'bad')
+    @book2 = Book.new('Horror', 'Edgar Allan Poe', DateTime.new(2000, 1, 1), 'Gandhi', 'good')
+    @book3 = Book.new('Horror', 'Edgar Allan Poe', DateTime.new(2020, 1, 1), 'Gandhi', 'good')
   end
   it 'instantiates a Book' do
     expect(@book).to be_instance_of Book

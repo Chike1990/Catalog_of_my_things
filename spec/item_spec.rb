@@ -3,8 +3,8 @@ require 'date'
 
 describe 'test Item class' do
   before(:each) do
-    @item = Item.new('1', '2', '3', Date.new(2000, 11, 25))
-    @new_item = Item.new('1', '2', '3', Date.new(2020, 11, 25))
+    @item = Item.new('1', '2', Date.new(2000, 11, 25), '3')
+    @new_item = Item.new('1', '2', Date.new(2020, 11, 25), '3')
   end
   it 'instantiates an Item' do
     expect(@item).to be_instance_of Item
