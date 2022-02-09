@@ -2,13 +2,8 @@ require_relative '../classes/game'
 
 describe 'test Game class' do
   before :each do
-    @game = [Game.new(true, 2020 - 0o1 - 0o1, 2005 - 0o1 - 0o1), Game.new(true, 2022 - 0o1 - 0o1, 2022 - 0o2 - 0o2)]
+    @game = [Game.new(true, 2020, 2005), Game.new(true, 2022, 2022)]
   end
-
-  describe 'test Label class' do
-    before(:each) do
-      @label = Label.new('books', 'Red')
-    end
 
     it 'instantiates a Game' do
       @game.each do |game|
