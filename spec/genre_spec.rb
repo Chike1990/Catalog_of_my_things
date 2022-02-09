@@ -9,7 +9,9 @@ describe Genre do
     end
 
     describe '#add_item' do
-        it
+        it 'the method calls the add_genre' do
+            
+        end
     end
 
 end
