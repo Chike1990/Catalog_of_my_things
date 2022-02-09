@@ -1,4 +1,6 @@
-class Genre
+require '../classes/item.rb'
+
+class Genre < Item
     attr_accessor :items
   
     def initialize(name, _genre)

@@ -14,7 +14,7 @@ class Item
 
   def add_genre(genre)
     @genre = genre
-    @genre.item.push(self) unless @genre.include?(genre)
+    @genre.item << self unless @genre.include?(genre)
   end
 
   def can_be_archived?
