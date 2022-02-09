@@ -8,4 +8,8 @@ describe Genre do
         end
     end
 
+    describe '#add_item' do
+        it
+    end
+
 end

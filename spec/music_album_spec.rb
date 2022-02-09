@@ -1,10 +1,10 @@
-require_relative '../classes/music_album'
+require '../classes/music_album'
 
 describe MusicAlbum do
-    describe 'Checks the instace of genre' do
-        it 'return true if the is the instaces of Genre'do
-            music_instance = MusicAlbum.new(02/02/2020, false)
-            expect(music_instance).to be_instance_of(/MusicAlbum)
+    describe 'checks the instance of MusicAlbum class' do
+        it 'Returns the instance of Music Album class' do
+            music_album_instance = MusicAlbum.new(02/02/2020, 02/02/2020)
+            expect(music_album_instance).to be_instance_of(MusicAlbum)
         end
     end
 end
