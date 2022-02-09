@@ -1,15 +1,25 @@
+require 'colorize'
+require_relative 'classes/bookshelf'
+
 class App
   def initialize; end
 
   def run
     show_menu
+    selection = gets.chomp
+    case(selection)
+    when "1"
+      return BookShelf.start
+    else
+      puts'GoodBye'.blue
+      return
+    end
   end
 
   def show_menu
-    puts 'Select an option to create'
-    puts '1.- Create a Book'
-    puts '2.- Create a Book'
-    puts '3.- Create a Book'
-    puts '4.- Create a Book'
+    puts 'Select an option to create'.blue
+    puts '--------------------------------------------------------------------'.white
+    puts '1.- Work with books'.green
+    puts '0.- Close App'.light_green
   end
 end
