@@ -13,8 +13,8 @@ class Game < Item
 
   private
 
-  def can_be_achived?(date)
-    true if super.publish_date && @last_played_at > 2
+  def can_be_achived?()
+    true if super && @last_played_at > 2
     false
   end
 end
