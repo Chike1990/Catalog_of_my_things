@@ -13,13 +13,13 @@ describe MusicAlbum do
     end
 
     describe '#can_be_archived?' do
-        it 'Should be achievable because of COVER' do
+        it 'Should be archievable because of COVER' do
             expect(@album.can_be_archived?).to be(true)
           end
-          it 'Should be achievable because of DATE' do
+          it 'Should be archievable because of DATE' do
             expect(@album_two.can_be_archived?).to be(true)
           end
-          it 'Should NOT be achievable' do
+          it 'Should NOT be archievable' do
             expect(@album_three.can_be_archived?).to be(false)
           end
     end
