@@ -1,12 +1,13 @@
-require './item'
+require_relative 'item'
 require 'date'
 
 class Game < Item
-  attr_accessor :last_played_at, :multiplayer
-  attr_reader :publish_date
+  attr_accessor :last_played_at, :multiplayer, :publish_date
 
-  def initialize(multiplayer, last_played_at, publish_date)
-    super(publish_date)
+  # attr_reader :publish_date
+
+  def initialize(author, multiplayer, last_played_at, publish_date)
+    super(author, publish_date)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
   end
@@ -14,7 +15,9 @@ class Game < Item
   private
 
   def can_be_achived?()
-    true if super && @last_played_at > 2
+    date = DateTime.now.year
+    return true if super && date - @last_played_at > 2
+
     false
   end
 end

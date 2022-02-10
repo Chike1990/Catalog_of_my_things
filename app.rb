@@ -1,5 +1,8 @@
 require 'colorize'
 require_relative 'classes/bookshelf'
+require_relative 'game'
+require_relative 'author'
+
 
 class App
   def initialize
@@ -22,6 +25,7 @@ class App
     puts 'Select an option to create'.blue
     puts '--------------------------------------------------------------------'.white
     puts '1.- Work with books'.green
+    puts '2.- Work with games'.green
     puts '0.- Close App'.light_green
   end
 end
