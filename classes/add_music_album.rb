@@ -9,6 +9,15 @@ class AddMusicAlbum
   end
   attr_accessor :albums
 
+  def list_albums
+    @albums.each do |album|
+      puts "Author: #{album['author']},
+        Genre: #{album['genre']},
+        Publish date: #{album['publish_date']},
+        On Spotify?: #{album['on_spotify']}".light_blue
+    end
+  end
+
   def add_albums
     puts 'Whats the Genre of the album?'.blue
     genre = gets.chomp.capitalize
@@ -46,8 +55,6 @@ class AddMusicAlbum
     File.write('albumCollection.json', arr.to_json)
   end
 
-  private
-
   def fetch_albums
     exists = false
     exists = true if File.exist?('albumCollection.json')
@@ -58,10 +65,6 @@ class AddMusicAlbum
     end
     album_file = File.open('albumCollection.json', 'r+')
     data = album_file.read
-    JSON.parse(data)
+    @albums = JSON.parse(data)
   end
 end
-
-e = AddMusicAlbum.new
-e.add_albums
-p e.albums
