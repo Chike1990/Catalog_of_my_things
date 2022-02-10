@@ -3,7 +3,6 @@ require_relative 'classes/bookshelf'
 require_relative 'game'
 require_relative 'author'
 
-
 class App
   def initialize
     @book_shelf = BookShelf.new
