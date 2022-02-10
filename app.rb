@@ -6,6 +6,7 @@ require_relative 'author'
 class App
   def initialize
     @book_shelf = BookShelf.new
+    @album_shelf = AlbumShelf.new
   end
 
   def run
@@ -14,6 +15,8 @@ class App
     case selection
     when '1'
       @book_shelf.start
+    when '2'
+      @album_shelf.start
     else
       puts 'GoodBye'.blue
       nil
