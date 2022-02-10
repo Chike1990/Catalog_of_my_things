@@ -3,7 +3,7 @@ require 'date'
 
 describe 'test Item class' do
   before(:each) do
-    @item = Item.new('1', 2000, )
+    @item = Item.new('1', 2000)
     @new_item = Item.new('1', 2020)
   end
   it 'instantiates an Item' do

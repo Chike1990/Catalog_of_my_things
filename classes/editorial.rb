@@ -5,7 +5,7 @@ require 'date'
 
 class Editorial
   def initialize
-    @books = fetch_books
+    @books = []
   end
   attr_accessor :books
 
@@ -19,29 +19,44 @@ class Editorial
     puts 'Who is the publisher'.blue
     publisher = gets.chomp.capitalize
     puts 'whats is the state of the cover? [good/bad]'.blue
-    state = gets.chomp.capitalize
-    new_book = Book.new(genre, author,year, publisher, state)
+    cover_state = gets.chomp.capitalize
+    new_book = Book.new(author, year, publisher, cover_state, genre)
     @books << new_book
-    p books
     save_books
+  end
+
+  def list_books
+    @books.each do |book|
+      puts "Author: #{book['author']},
+        Genre: #{book['genre']},
+        Publish date: #{book['publish_date']},
+        Cover state: #{book['cover_state']}".light_blue
+    end
   end
 
   def save_books
     arr = @books.map do |book|
-      {
-        genre: book.genre,
-        author: book.author,
-        publish_date: book.publish_date,
-        publisher: book.publisher,
-        cover_state: book.cover_state,
-        label: book.label
-      }
+      if defined?(book['genre'])
+        { genre: book['genre'],
+          author: book['author'],
+          publish_date: book['publish_date'],
+          publisher: book['publisher'],
+          cover_state: book['cover_state'],
+          label: book['label'] }
+      else
+        {
+          genre: book.genre,
+          author: book.author,
+          publish_date: book.publish_date,
+          publisher: book.publisher,
+          cover_state: book.cover_state,
+          label: book.label
+        }
+      end
     end
-
     File.write('bookCollection.json', arr.to_json)
   end
 
-  private
   def fetch_books
     exists = false
     exists = true if File.exist?('bookCollection.json')
@@ -52,10 +67,6 @@ class Editorial
     end
     book_file = File.open('bookCollection.json', 'r+')
     data = book_file.read
-    JSON.parse(data)
+    @books = JSON.parse(data)
   end
 end
-
-e = Editorial.new
-e.add_book
-p e.books

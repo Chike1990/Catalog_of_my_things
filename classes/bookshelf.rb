@@ -1,8 +1,12 @@
 require 'colorize'
 require_relative './editorial'
 
-module BookShelf
-  def  BookShelf.show_menu
+class BookShelf
+  def initialize
+    @editorial = Editorial.new
+  end
+
+  def show_menu
     puts 'What do you wish to do? Please enter the number of your choice'.blue
     puts '--------------------------------------------------------------------'.white
     puts '1.- List all books'.green
@@ -11,24 +15,26 @@ module BookShelf
     puts '0.- Close App'.light_green
   end
 
-  def BookShelf.start
-    BookShelf.show_menu
+  def start
+    show_menu
     response = gets.chomp
-
-    case(response)
-    when "1"
-      return BookShelf.list_books
-    when "2"
-      return BookShelf.list_labels
-    when "3"
-      return BookShelf.add_book
-    when "0"
-      puts'GoodBye'.blue
-      return
+    case response
+    when '1'
+      @editorial.fetch_books
+      @editorial.list_books
+      start
+    when '2'
+      list_labels
+    when '3'
+      @editorial.fetch_books
+      @editorial.add_book
+      puts 'Book Created Succesfully'.light_blue
+      start
+    when '0'
+      puts 'GoodBye'.blue
     else
       puts 'Not a valid option, please try again'.red
-      return BookShelf.start
+      start
     end
   end
 end
-

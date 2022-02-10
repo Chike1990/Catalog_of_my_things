@@ -2,17 +2,19 @@ require 'colorize'
 require_relative 'classes/bookshelf'
 
 class App
-  def initialize; end
+  def initialize
+    @book_shelf = BookShelf.new
+  end
 
   def run
     show_menu
     selection = gets.chomp
-    case(selection)
-    when "1"
-      return BookShelf.start
+    case selection
+    when '1'
+      @book_shelf.start
     else
-      puts'GoodBye'.blue
-      return
+      puts 'GoodBye'.blue
+      nil
     end
   end
 
