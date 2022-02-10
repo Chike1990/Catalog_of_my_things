@@ -11,3 +11,17 @@ CREATE TABLE genres (
   PRIMARY KEY(id),
   name varchar(45)
 );
+
+CREATE TABLE items (
+  id int GENERATED ALWAYS AS IDENTITY NOT NULL,
+  PRIMARY KEY (id),
+  genre varchar(30),
+  author varchar(30),
+  label varchar(30),
+  publish_date int,
+  archived boolean,
+  album_id int, 
+  genre_id int,
+  CONSTRAINT kf_albums FOREIGN KEY(album_id) REFERENCES albums(id) ON DELETE CASCADE,
+  CONSTRAINT kf_genres FOREIGN KEY(genre_id) REFERENCES genres(id) ON DELETE CASCADE
+); 
