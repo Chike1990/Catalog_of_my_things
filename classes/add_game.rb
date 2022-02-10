@@ -34,12 +34,17 @@ class AddGame
 
   def save_games
     arr = @games.map do |game|
-      {
-        author: game.author,
-        multiplayer: game.multiplayer,
-        last_played_at: game.last_played_at,
-        publish_date: game.publish_date
-      }
+      if defined?(game.author)
+        { author: game.author,
+          multiplayer: game.multiplayer,
+          last_played_at: game.last_played_at,
+          publish_date: game.publish_date }
+      else
+        { author: game['author'],
+          multiplayer: game['multiplayer'],
+          last_played_at: game['last_played_at'],
+          publish_date: game['publish_date'] }
+      end
     end
     File.write('gameCollection.json', arr.to_json)
   end
