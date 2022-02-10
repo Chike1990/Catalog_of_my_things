@@ -8,7 +8,7 @@ describe 'test Game class' do
   end
 
   it 'instantiates a Game' do
-    expect(@game).to be_instance_of (Game)
+    expect(@game).to be_instance_of(Game)
   end
 
   it 'can be achieved' do
