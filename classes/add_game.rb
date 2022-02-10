@@ -34,10 +34,9 @@ class AddGame
 
   def list_authors
     @games.each do |author|
-      puts "#{author['author']}".light_blue
+      puts (author['author']).to_s.light_blue
     end
   end
-
 
   def save_games
     arr = @games.map do |game|
