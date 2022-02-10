@@ -13,7 +13,7 @@ describe 'test Label class' do
   end
 
   it 'should have Items' do
-    @label.add_item(Item.new('1', '2', '3', Date.new(2020, 11, 25)))
+    @label.add_item(Item.new('1', '2000'))
     expect(@label.items).not_to be_empty
   end
 end

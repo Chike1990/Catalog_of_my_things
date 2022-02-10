@@ -3,9 +3,9 @@ require 'date'
 
 describe 'test Book class' do
   before(:each) do
-    @book = Book.new('Horror', 'Edgar Allan Poe', DateTime.new(2020, 1, 1), 'Gandhi', 'bad')
-    @book2 = Book.new('Horror', 'Edgar Allan Poe', DateTime.new(2000, 1, 1), 'Gandhi', 'good')
-    @book3 = Book.new('Horror', 'Edgar Allan Poe', DateTime.new(2020, 1, 1), 'Gandhi', 'good')
+    @book = Book.new('Edgar Allan Poe', 2020, 'Gandhi', 'bad', 'Horror')
+    @book2 = Book.new('Edgar Allan Poe', 2000, 'Gandhi', 'good', 'Horror')
+    @book3 = Book.new('Edgar Allan Poe', 2020, 'Gandhi', 'good', 'Horror')
   end
   it 'instantiates a Book' do
     expect(@book).to be_instance_of Book
