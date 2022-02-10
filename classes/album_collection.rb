@@ -16,7 +16,6 @@ class AlbumShelf
     puts '0.- Close App'.light_green
   end
 
-  # rubocop:disable Metrics/MethodLength
   def start
     show_menu
     response = gets.chomp
@@ -40,4 +39,3 @@ class AlbumShelf
     end
   end
 end
-# rubocop:enable Metrics/MethodLength
