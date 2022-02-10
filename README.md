@@ -26,7 +26,8 @@ To get a local copy up and running follow these simple example steps.
 ### Usage
 
 - Move into the repo using `cd Catalog_of_my_things`
-- Run it using `Ruby main.rb`
+- After cloning the repo run `gem install bundler`
+- Run it using `ruby main.rb`
 
 ### Run tests
 
