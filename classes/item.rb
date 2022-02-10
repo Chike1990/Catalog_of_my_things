@@ -1,8 +1,6 @@
 require 'date'
 
 class Item
-  attr_accessor :genre
-
   def initialize(author, publish_date, genre = nil, label = 'undefined')
     @id = Random.rand(1...10_000_000)
     @archived = false
@@ -11,7 +9,8 @@ class Item
     @label = label
     @publish_date = publish_date
   end
-  attr_reader :archived
+  attr_accessor :genre
+  attr_reader :archived, :author, :publish_date
   attr_writer :label
 
   def add_genre(genre)
