@@ -18,17 +18,15 @@ class GameShelf
   def start
     show_menu
     response = gets.chomp
+    @add_game.fetch_games
     case response
     when '1'
-      @add_game.fetch_games
       @add_game.list_games
       start
     when '2'
-      @add_game.fetch_games
       @add_game.list_authors
       start
     when '3'
-      @add_game.fetch_games
       @add_game.add_game
       puts 'Game Created Succesfully'.light_blue
       start
