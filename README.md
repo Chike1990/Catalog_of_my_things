@@ -2,7 +2,7 @@
 
 # Catalog of my things
 
-> A useful app to keep track of all your stuff
+> This APP helps you to keep a record of different types of things you won: books, music albums, movies, and games.
 
 ## Video introduction 
 
