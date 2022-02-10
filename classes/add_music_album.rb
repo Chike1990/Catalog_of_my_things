@@ -10,11 +10,19 @@ class AddMusicAlbum
   attr_accessor :albums
 
   def list_albums
-    @albums.each do |album|
-      puts "Author: #{album['author']},
+    puts "List of albums: "
+    @albums.each_with_index do |album, indx|
+      puts " #{indx + 1}). Author: #{album['author']},
         Genre: #{album['genre']},
         Publish date: #{album['publish_date']},
         On Spotify?: #{album['on_spotify']}".light_blue
+    end
+  end
+
+  def list_genres
+    puts "List of Genre:"
+    @albums.each_with_index do |album, indx|
+      puts " #{indx + 1}) #{album['genre']}"
     end
   end
 
