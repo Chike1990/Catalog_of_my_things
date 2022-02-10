@@ -9,4 +9,3 @@ class ListAlbum
         end
     end
 end
-

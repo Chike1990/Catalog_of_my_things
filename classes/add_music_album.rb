@@ -5,7 +5,7 @@ require 'date'
 
 class AddMusicAlbum
   def initialize
-    @albums = fetch_albums
+    @albums = []
   end
   attr_accessor :albums
 
@@ -19,14 +19,22 @@ class AddMusicAlbum
     puts 'On spotify?'.blue
     on_spotify = gets.chomp.capitalize
 
-    new_album = MusicAlbum.new(publish_date, genre, author, on_spotify)
-    @albums << new_album
-    p albums
+    temp_album = MusicAlbum.new(publish_date, genre, author, on_spotify)
+
+    @albums <<  temp_album
     save_albums
   end
 
   def save_albums
     arr = @albums.map do |album|
+      if defined?(album['genre'])
+        {
+          genre: album['genre'],
+          author: album['author'],
+          publish_date: album['publish_date'],
+          on_spotify: album['on_spotify'],
+        }
+      else
       {
         genre: album.genre,
         author: album.author,
@@ -34,7 +42,7 @@ class AddMusicAlbum
         on_spotify: album.on_spotify,
       }
     end
-
+  end
     File.write('albumCollection.json', arr.to_json)
   end
 
