@@ -20,7 +20,9 @@ class Editorial
     publisher = gets.chomp.capitalize
     puts 'whats is the state of the cover? [good/bad]'.blue
     cover_state = gets.chomp.capitalize
-    new_book = Book.new(author, year, publisher, cover_state, genre)
+    puts 'whats label should we put it?'.blue
+    label = gets.chomp.capitalize
+    new_book = Book.new(author, year, publisher, cover_state, genre, label)
     @books << new_book
     save_books
   end
@@ -31,6 +33,13 @@ class Editorial
         Genre: #{book['genre']},
         Publish date: #{book['publish_date']},
         Cover state: #{book['cover_state']}".light_blue
+    end
+  end
+
+  def list_labels
+    puts 'List of all labels:'
+    @books.each_with_index do |book, i|
+      puts " #{i + 1}) #{book['genre']}"
     end
   end
 

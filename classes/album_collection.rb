@@ -30,7 +30,6 @@ class AlbumShelf
       puts 'Book Created Succesfully'.light_blue
       start
     when '3'
-      @add_album.fetch_albums
       @add_album.list_genres
       start
     when '0'
