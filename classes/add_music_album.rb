@@ -10,7 +10,7 @@ class AddMusicAlbum
   attr_accessor :albums
 
   def list_albums
-    puts "List of albums: "
+    puts 'List of all albums: '
     @albums.each_with_index do |album, indx|
       puts " #{indx + 1}). Author: #{album['author']},
         Genre: #{album['genre']},
@@ -20,7 +20,7 @@ class AddMusicAlbum
   end
 
   def list_genres
-    puts "List of Genre:"
+    puts 'List of all Genre:'
     @albums.each_with_index do |album, indx|
       puts " #{indx + 1}) #{album['genre']}"
     end
