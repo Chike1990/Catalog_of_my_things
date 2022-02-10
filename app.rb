@@ -1,3 +1,6 @@
+require_relative 'game'
+require_relative 'author'
+
 class App
   def initialize; end
 
@@ -10,6 +13,6 @@ class App
     puts '1.- Create a Book'
     puts '2.- Create a Book'
     puts '3.- Create a Book'
-    puts '4.- Create a Book'
+    puts '4.- Create a Game'
   end
 end
