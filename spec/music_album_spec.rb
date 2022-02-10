@@ -1,4 +1,4 @@
-require '../classes/music_album'
+require_relative '../classes/music_album'
 
 describe MusicAlbum do
     before(:each) do
