@@ -24,7 +24,9 @@ class GameShelf
       @add_game.list_games
       start
     when '2'
-      puts 'Work in Progress check back letter'.red
+      @add_game.fetch_games
+      @add_game.list_authors
+      start
     when '3'
       @add_game.fetch_games
       @add_game.add_game

@@ -32,6 +32,13 @@ class AddGame
     end
   end
 
+  def list_authors
+    @games.each do |author|
+      puts "#{author['author']}".light_blue
+    end
+  end
+
+
   def save_games
     arr = @games.map do |game|
       if defined?(game.author)
