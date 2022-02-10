@@ -1,4 +1,4 @@
-require '../classes/item.rb'
+require_relative '../classes/item.rb'
 
 class Genre < Item
     attr_accessor :items, :genre
