@@ -1,5 +1,5 @@
-require_relative 'game.rb'
-require_relative 'author.rb'
+require_relative 'game'
+require_relative 'author'
 
 class App
   def initialize; end

@@ -3,6 +3,7 @@ require 'date'
 
 class Game < Item
   attr_accessor :last_played_at, :multiplayer, :publish_date
+
   # attr_reader :publish_date
 
   def initialize(author, multiplayer, last_played_at, publish_date)
@@ -16,6 +17,7 @@ class Game < Item
   def can_be_achived?()
     date = DateTime.now.year
     return true if super && date - @last_played_at > 2
+
     false
   end
 end
