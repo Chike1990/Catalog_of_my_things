@@ -21,7 +21,7 @@ class AddMusicAlbum
 
     temp_album = MusicAlbum.new(publish_date, genre, author, on_spotify)
 
-    @albums <<  temp_album
+    @albums << temp_album
     save_albums
   end
 
@@ -32,21 +32,22 @@ class AddMusicAlbum
           genre: album['genre'],
           author: album['author'],
           publish_date: album['publish_date'],
-          on_spotify: album['on_spotify'],
+          on_spotify: album['on_spotify']
         }
       else
-      {
-        genre: album.genre,
-        author: album.author,
-        publish_date: album.publish_date,
-        on_spotify: album.on_spotify,
-      }
+        {
+          genre: album.genre,
+          author: album.author,
+          publish_date: album.publish_date,
+          on_spotify: album.on_spotify
+        }
+      end
     end
-  end
     File.write('albumCollection.json', arr.to_json)
   end
 
   private
+
   def fetch_albums
     exists = false
     exists = true if File.exist?('albumCollection.json')
