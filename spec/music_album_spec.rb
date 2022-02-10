@@ -2,9 +2,9 @@ require '../classes/music_album'
 
 describe MusicAlbum do
     before(:each) do
-        @album = MusicAlbum.new(DateTime.new(2020), 'Jazz', 'Paulina')
-        @album_two = MusicAlbum.new(DateTime.new(2000), 'Jazz', 'Paulina')
-        @album_three = MusicAlbum.new(DateTime.new(2020), 'Jazz', 'Paulina')
+        @album = MusicAlbum.new(2020, 'Jazz', 'Paulina')
+        @album_two = MusicAlbum.new(2000, 'Jazz', 'Tina')
+        @album_three = MusicAlbum.new(2020, 'Jazz', 'Paulina')
       end
     describe 'checks the instance of MusicAlbum class' do
         it 'Returns the instance of Music Album class' do
