@@ -24,7 +24,8 @@ class BookShelf
       @editorial.list_books
       start
     when '2'
-      list_labels
+      @editorial.list_labels
+      start
     when '3'
       @editorial.add_book
       puts 'Book Created Succesfully'.light_blue
