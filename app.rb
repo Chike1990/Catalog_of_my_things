@@ -1,5 +1,6 @@
 require 'colorize'
 require_relative 'classes/bookshelf'
+require_relative 'classes/game_shelf'
 require_relative 'classes/game'
 require_relative 'classes/author'
 require_relative 'classes/album_collection'
@@ -8,6 +9,7 @@ class App
   def initialize
     @book_shelf = BookShelf.new
     @album_shelf = AlbumShelf.new
+    @game_shelf = GameShelf.new
   end
 
   def run
@@ -18,6 +20,8 @@ class App
       @book_shelf.start
     when '2'
       @album_shelf.start
+    when '3'
+      @game_shelf.start
     else
       puts 'GoodBye'.blue
       nil

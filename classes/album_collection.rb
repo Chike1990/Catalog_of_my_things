@@ -16,16 +16,16 @@ class AlbumShelf
     puts '0.- Close App'.light_green
   end
 
+  # rubocop:disable Metrics/MethodLength
   def start
     show_menu
     response = gets.chomp
+    @add_album.fetch_albums
     case response
     when '1'
-      @add_album.fetch_albums
       @add_album.list_albums
       start
     when '2'
-      @add_album.fetch_albums
       @add_album.add_albums
       puts 'Book Created Succesfully'.light_blue
       start
@@ -41,3 +41,4 @@ class AlbumShelf
     end
   end
 end
+# rubocop:enable Metrics/MethodLength
